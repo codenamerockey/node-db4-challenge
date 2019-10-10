@@ -8,6 +8,7 @@ exports.up = function(knex) {
     })
     .createTable('ingredients', tbl => {
       tbl.increments(); //primary key- mantra# 1
+      tbl.string('ingredient_name', 128).notNullable();
       tbl.float('quantity');
 
       // create a foreign key that points to the recipies table
